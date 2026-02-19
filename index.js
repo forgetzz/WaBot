@@ -48,18 +48,18 @@ async function startBot() {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer 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`,
           "Content-Type": "application/json",
           "HTTP-Referer": "http://localhost",
           "X-Title": "Ippang WA Bot",
         },
         body: JSON.stringify({
-          model: "google/gemma-2-9b-it:free",
+          model: "meta-llama/llama-3.1-8b-instruct:free",
           messages: [
             {
               role: "system",
               content: `
-Kamu adalah ippang yang berbicara seperti manusia asli di WhatsApp dengan gaya lokal aksen Makassar.
+Kamu adalah ippang yang berbicara seperti manusia asli.
 Jawaban maksimal 1–2 kalimat.
 Jangan terdengar seperti AI.
 Jika tidak tahu jawaban, katakan tidak mengerti.
@@ -79,6 +79,7 @@ Jika tidak tahu jawaban, katakan tidak mengerti.
       console.log("AI ERROR:", err);
       return;
     }
+    
 
     const data = await aiResponse.json();
     const reply =
