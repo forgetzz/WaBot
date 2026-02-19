@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 dotenv.config();
+console.log("OPENROUTER KEY:", process.env.OPENROUTER_API_KEY);
 
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState("auth");
@@ -48,7 +49,7 @@ async function startBot() {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
           "HTTP-Referer": "http://localhost",
           "X-Title": "Ippang WA Bot",
