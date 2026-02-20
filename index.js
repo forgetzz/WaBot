@@ -55,7 +55,7 @@ async function startBot() {
           "X-Title": "Ippang WA Bot",
         },
         body: JSON.stringify({
-          model: "mistralai/mistral-7b-instruct:free",
+          model: "mistralai/mistral-7b-instruct",
           messages: [
             {
               role: "system",
