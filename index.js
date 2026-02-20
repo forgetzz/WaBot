@@ -72,7 +72,7 @@ Jika tidak tahu jawaban, katakan tidak mengerti.
             },
           ],
         }),
-      }
+      },
     );
 
     if (!aiResponse.ok) {
@@ -80,18 +80,15 @@ Jika tidak tahu jawaban, katakan tidak mengerti.
       console.log("AI ERROR:", err);
       return;
     }
-    
 
     const data = await aiResponse.json();
-    const reply =
-      data?.choices?.[0]?.message?.content || "Maaf, error dulu.";
+    const reply = data?.choices?.[0]?.message?.content || "Maaf, error dulu.";
 
     await sock.sendMessage(msg.key.remoteJid, { text: reply });
   });
 }
 
 startBot();
-
 
 // 🔥 TAMBAHKAN DI SINI (PALING BAWAH)
 
