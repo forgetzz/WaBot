@@ -51,7 +51,7 @@ async function startBot() {
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": "http://localhost",
+          "HTTP-Referer": "https://wabot-production-cd98.up.railway.app/",
           "X-Title": "Ippang WA Bot",
         },
         body: JSON.stringify({
